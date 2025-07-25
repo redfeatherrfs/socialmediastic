@@ -45,7 +45,7 @@ const ContactUsFormHome = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        await fetch("http://creativelogodesign.co.uk/social-media/php_mailer", {
+        await fetch("http://creativelogodesign.co.uk/social-media/php_mailer/send-email.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
@@ -167,9 +167,17 @@ const ContactUsFormHome = () => {
               </div>
               <div className="row">
                 <div className="col-12 text-right">
-                  <button type="submit" className="btn btn-primary">
+                  {/* <button type="submit" className="btn btn-primary">
                     Send Message
-                  </button>
+                  </button> */}
+                    <button type='submit' className="btn btn-primary" disabled={loading}>
+                                    {loading ? (
+                                        <>
+                                            <span className="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+                                            <span role="status">Submitting...</span>
+                                        </>
+                                    ) : 'Submit'}
+                                </button>
                 </div>
               </div>
             </form>

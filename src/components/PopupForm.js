@@ -78,7 +78,7 @@ const PopupForm = () => {
                 document.querySelector('button[data-bs-dismiss]').click();
                 setLoading(false);
                 if (success) {
-                    navigate('/thank-you');
+                    navigate('/thanks.php');
                 } else {
                     Swal.fire('Error', message, 'error');
                 }
