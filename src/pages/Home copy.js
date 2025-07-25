@@ -19,7 +19,6 @@ import { Helmet } from 'react-helmet';
 import PopupForm from '../components/PopupForm';
 import ScrollToTopButton from '../components/scrolltoback';
 import HeaderLp from '../components/Home/headerLp';
-import FooterLp from '../components/Home/footerlp';
 
 
 
@@ -48,10 +47,10 @@ const Home = () => {
                 </a>
 
             <a href="/services" style={{ textDecoration: 'none' }}>
-  {/* <button className="get-started-transparent-btn">
+  <button className="get-started-transparent-btn">
     View Services
     <AiOutlineArrowRight className="arrow-icon" />
-  </button> */}
+  </button>
 </a>
 
           </div></div>
@@ -87,8 +86,7 @@ const Home = () => {
       <Testimonials />
       <ContactUsFormHome />
       {/* <ScrollToTopButton/> */}
-      {/* <Footer /> */}
-      <FooterLp/>
+      <Footer />
 
       <PopupForm />
     </div>

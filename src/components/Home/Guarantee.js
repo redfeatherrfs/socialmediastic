@@ -27,7 +27,7 @@ const GuaranteedSection = () => {
               <li>Experience the power of our services without any risk. Our 100% money-back guarantee ensures your peace of mind.</li>
             </ul>
             <div className="button-group">
-            <a href="tel:+7327979165" style={{ textDecoration: 'none' }}>
+            <a href="tel:+442045112054" style={{ textDecoration: 'none' }}>
               <button className="get-started-btn">
                 Free Consultation
                 <AiOutlineArrowRight className="arrow-icon" />

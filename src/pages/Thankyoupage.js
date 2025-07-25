@@ -24,7 +24,7 @@ const Contactus = () => {
                     guide you through the next steps.
                 </p>
                 <p>
-                    Having trouble? <a href="tel:+7327979165">Contact us</a>
+                    Having trouble? <a href="tel:+442045112054">Contact us</a>
                 </p>
                 <div className="container">
              <div className="row align-items-center">

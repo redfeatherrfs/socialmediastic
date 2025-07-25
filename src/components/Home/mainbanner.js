@@ -30,24 +30,31 @@ const MainBanner = () => {
             </p>
             
             <div className="button-group">
-            <a href="tel:+7327979165" style={{ textDecoration: 'none' }}>
+            <a href="tel:+442045112054" style={{ textDecoration: 'none' }}>
       <button className="get-started-btn">
         Free Consultation
         <AiOutlineArrowRight className="arrow-icon" />
       </button>
     </a>
 
-    <Link
-        to="pricing-section"  // Target component id
-        smooth={true}           // Enable smooth scroll
-        duration={500}          // Duration of the scroll in ms
-        offset={-70}            // Optional offset to adjust position (like sticky navbar)
-      >
-        <button className="get-started-transparent-btn">
-          View Pricing
+    {/* <Link
+        to="pricing-section"  
+        smooth={true}           
+        duration={500}          
+        offset={-70}            
+      > */}
+        <button className="get-started-transparent-btn"
+        
+          data-bs-toggle="modal"
+          data-bs-target="#popupForm"
+        
+        
+        >
+          
+          Get Started
           <AiOutlineArrowRight className="arrow-icon" />
         </button>
-      </Link>
+      {/* </Link> */}
 </div>
             
           </div>

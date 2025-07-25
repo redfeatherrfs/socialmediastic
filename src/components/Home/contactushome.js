@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPhone, FaEnvelope, FaSkype, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../contactusformhome.css';
 
@@ -16,101 +16,94 @@ const ContactUsFormHome = () => {
 
   // Validation regex
   const nameRegex = /^[a-zA-Z\s]*$/;
-  const phoneRegex = /^\+?[0-9]{10,15}$/;
+  const phoneRegex = /^[+0-9\- ]{10,15}$/;
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
-
-    // Validate first name
-    if (!formData.firstName || !nameRegex.test(formData.firstName)) {
-      newErrors.firstName = 'Enter a valid first name';
-    }
-    // Validate phone number
-    if (!formData.phone || !phoneRegex.test(formData.phone)) {
-      newErrors.phone = 'Enter a valid phone number';
-    }
-    // Validate email
-    if (!formData.email || !emailRegex.test(formData.email)) {
-      newErrors.email = 'Enter a valid email';
-    }
-    // Validate message
-    if (!formData.message) {
-      newErrors.message = 'Enter a message';
-    }
-
-    if (Object.keys(newErrors).length === 0) {
-      // Form is valid, submit the form data
-      console.log('Form submitted', formData);
-      // Reset form if needed
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        message: ''
-      });
-      setErrors({});
-    } else {
-      setErrors(newErrors);
-    }
-  };
 
   // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = {};
+
+    // Validation
+    if (!formData.firstName || !nameRegex.test(formData.firstName)) {
+      newErrors.firstName = 'Enter a valid first name';
+    }
+    if (!formData.phone || !phoneRegex.test(formData.phone)) {
+      newErrors.phone = 'Enter a valid phone number';
+    }
+    if (!formData.email || !emailRegex.test(formData.email)) {
+      newErrors.email = 'Enter a valid email';
+    }
+    if (!formData.message) {
+      newErrors.message = 'Enter a message';
+    }
+
+    if (Object.keys(newErrors).length === 0) {
+      try {
+        await fetch("http://creativelogodesign.co.uk/social-media/php_mailer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+        // No need to handle redirect in React — PHP will do it
+      } catch (err) {
+        console.error("Email sending failed:", err);
+        alert("Something went wrong while sending your message.");
+      }
+    } else {
+      setErrors(newErrors);
+    }
+  };
+
   return (
     <section className="contactus-form-home py-5">
       <div className="container">
-        {/* Row 1: Heading and Subtext */}
         <div className="row text-center mb-5">
           <div className="col-12">
             <h2 className="contactus-heading">Get In Touch</h2>
-            <p className="contactus-text">Ready to elevate your brand's online presence and achieve your marketing goals? Let's connect and discuss how Social Mediastics can help you.</p>
+            <p className="contactus-text">
+              Ready to elevate your brand's online presence and achieve your marketing goals?
+              Let's connect and discuss how Social Mediastics can help you.
+            </p>
           </div>
         </div>
 
-        {/* Row 2: Contact Info and Form */}
         <div className="row">
-          {/* Column 1: Contact Info */}
+          {/* Contact Info */}
           <div className="col-lg-5 col-md-12 contact-info-column">
             <div className="contact-info">
               <div className="contact-item mb-4">
                 <FaPhone className="contact-icon" />
                 <div>
-                  <span className="subtitle-contact">Phone:</span><br></br>
-                  <a href="tel:+7327979165" className="contact-link">73279 79165</a>
+                  <span className="subtitle-contact">Phone:</span><br />
+                  <a href="tel:+442045112054" className="contact-link">0204-511-2054</a>
                 </div>
               </div>
               <div className="contact-item mb-4">
                 <FaEnvelope className="contact-icon" />
                 <div>
-                  <span className="subtitle-contact">Email:</span><br></br>
-                  <a href="mailto:info@socialmediastic.com" className="contact-link">info@socialmediastic.com</a>
+                  <span className="subtitle-contact">Email:</span><br />
+                  <a href="mailto:support@creativelogodesign.co.uk" className="contact-link">
+                    support@creativelogodesign.co.uk
+                  </a>
                 </div>
               </div>
-              {/* <div className="contact-item mb-4">
-                <FaSkype className="contact-icon" />
-                <div>
-                  <span className="subtitle-contact">Skype:</span><br></br>
-                  <a href="tel:+12341117531" className="contact-link">+1-234-111-7531</a>
-                </div>
-              </div> */}
               <div className="contact-item mb-4">
                 <FaMapMarkerAlt className="contact-icon" />
                 <div>
-                  <span className="subtitle-contact">Address:</span><br></br>
-                  <p>41 Winthrop Rd, Edison, NJ 08817</p>
+                  <span className="subtitle-contact">Address:</span><br />
+                  <p>Continental House, 497 Sunleigh Road, Wembley, England, HA0 4LY</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Contact Form */}
+          {/* Contact Form */}
           <div className="col-lg-7 col-md-12">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="row mb-3">

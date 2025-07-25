@@ -20,7 +20,7 @@ const App = () => {
             <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about-us" element={<About />} />
+                {/* <Route path="/about-us" element={<About />} />
                 <Route path="/contact-us" element={<Contactus />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/our-work" element={<Ourwork />} />
@@ -28,7 +28,7 @@ const App = () => {
                 <Route path="/terms-conditions" element={<TermsandConditions />} />
                 <Route path="/thank-you" element={<Thankyou />} />
                 <Route path="/:slug" element={<BlogPage />} />
-                    <Route path="/blogs" element={<BlogsPage />} />
+                    <Route path="/blogs" element={<BlogsPage />} /> */}
             </Routes>
         </Router>
     );

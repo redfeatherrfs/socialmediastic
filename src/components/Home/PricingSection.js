@@ -43,15 +43,7 @@ const PricingSection = () => {
         { name: "Post Scheduling", isAvailable: true },
         { name: "Monthly Reporting Standard", isAvailable: true },
         { name: "Customer Support", isAvailable: true },
-        // { name: "Access to All Features", isAvailable: true },
-        // { name: "1k lookups / per month", isAvailable: true },
-        // { name: "30k API Credits / month", isAvailable: true },
-        // { name: "10 Monitoring Quota", isAvailable: true },
-        // { name: "60 minutes Monitoring interval", isAvailable: true },
-        // { name: "20% discount on backorders", isAvailable: true },
-        // { name: "Domain Name Appraisal", isAvailable: true },
-        // { name: "Ip Monitoring", isAvailable: true },
-        // { name: "Backlink Monitoring", isAvailable: true },
+     
       ],
       buttonText: "Get a Quote",
       isPopular: true,
@@ -73,15 +65,7 @@ const PricingSection = () => {
         { name: "Post Scheduling", isAvailable: true },
         { name: "Monthly Reporting Advance", isAvailable: true },
         { name: "Customer Support", isAvailable: true },
-        // { name: "Access to All Features", isAvailable: true },
-        // { name: "1k lookups / per month", isAvailable: true },
-        // { name: "30k API Credits / month", isAvailable: true },
-        // { name: "10 Monitoring Quota", isAvailable: true },
-        // { name: "60 minutes Monitoring interval", isAvailable: true },
-        // { name: "20% discount on backorders", isAvailable: true },
-        // { name: "Domain Name Appraisal", isAvailable: true },
-        // { name: "Ip Monitoring", isAvailable: true },
-        // { name: "Backlink Monitoring", isAvailable: true },
+
       ],
       buttonText: "Get a Quote",
       isPopular: false,
@@ -114,7 +98,7 @@ const PricingSection = () => {
                 </p> */}
                 <div className="divider"></div>
                 <div className="card-price">
-                  <h2>${plan.price}</h2>
+                  <h2>£{plan.price}</h2>
                   <p>Per Month</p>
                 </div>
                 <div className="divider"></div>
@@ -143,7 +127,7 @@ const PricingSection = () => {
                 </ul>
 
                 {/* Updated the button with the <a> tag and the required data-bs-toggle and data-bs-target */}
-                <a
+                {/* <a
                   className={`trial-btn ${plan.isPopular ? "popular-btn" : ""}` }
                   data-bs-toggle="modal"
                   data-bs-target="#popupForm"
@@ -151,8 +135,18 @@ const PricingSection = () => {
                   style={{ textDecoration: 'none' }}
                 >
                   {plan.buttonText}
-                  {/* <AiOutlineArrowRight className="arrow-icon" /> */}
-                </a>
+                
+                </a> */}
+
+   <a
+  className="trial-btn"
+  data-bs-toggle="modal"
+  data-bs-target="#popupForm"
+  data-title={`${plan.type} PLAN - £${plan.price}`}
+  style={{ textDecoration: 'none' }}
+>
+  Get Started
+</a>
 
                 <p className="note">{plan.note}</p>
               </div>
