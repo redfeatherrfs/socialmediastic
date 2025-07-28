@@ -13,6 +13,7 @@ const ContactUsFormHome = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   // Validation regex
   const nameRegex = /^[a-zA-Z\s]*$/;
@@ -29,7 +30,6 @@ const ContactUsFormHome = () => {
     e.preventDefault();
     const newErrors = {};
 
-    // Validation
     if (!formData.firstName || !nameRegex.test(formData.firstName)) {
       newErrors.firstName = 'Enter a valid first name';
     }
@@ -45,15 +45,23 @@ const ContactUsFormHome = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        await fetch("http://creativelogodesign.co.uk/social-media/php_mailer/send-email.php", {
+        setLoading(true);
+        const response = await fetch("http://creativelogodesign.co.uk/social-media/php_mailer/send-email.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
         });
-        // No need to handle redirect in React — PHP will do it
+
+        if (response.ok) {
+          window.location.href = "https://creativelogodesign.co.uk/thanks.php";
+        } else {
+          alert("Something went wrong while sending your message.");
+        }
       } catch (err) {
         console.error("Email sending failed:", err);
         alert("Something went wrong while sending your message.");
+      } finally {
+        setLoading(false);
       }
     } else {
       setErrors(newErrors);
@@ -68,7 +76,7 @@ const ContactUsFormHome = () => {
             <h2 className="contactus-heading">Get In Touch</h2>
             <p className="contactus-text">
               Ready to elevate your brand's online presence and achieve your marketing goals?
-              Let's connect and discuss how Social Mediastics can help you.
+              Let's connect and discuss how Creative Logo Design can help you.
             </p>
           </div>
         </div>
@@ -167,17 +175,9 @@ const ContactUsFormHome = () => {
               </div>
               <div className="row">
                 <div className="col-12 text-right">
-                  {/* <button type="submit" className="btn btn-primary">
-                    Send Message
-                  </button> */}
-                    <button type='submit' className="btn btn-primary" disabled={loading}>
-                                    {loading ? (
-                                        <>
-                                            <span className="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
-                                            <span role="status">Submitting...</span>
-                                        </>
-                                    ) : 'Submit'}
-                                </button>
+                  <button type="submit" className="btn btn-primary" disabled={loading}>
+                    {loading ? 'Sending...' : 'Send Message'}
+                  </button>
                 </div>
               </div>
             </form>

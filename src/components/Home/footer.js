@@ -21,7 +21,7 @@ const Footer = () => {
                             <Link to="/"> <img src={footer} alt="Animation Rush" style={{ maxWidth: '150px' }} /></Link>
                         </h5>
                         <p className="text-light">
-                        Social Mediastics is your trusted partner in digital marketing. We specialize in elevating your brand's online presence through strategic social media solutions.
+                        Creative Logo Design is your trusted partner in digital marketing. We specialize in elevating your brand's online presence through strategic social media solutions.
                         </p>
                     </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
 
             {/* Footer Bottom Section with two columns */}
             <div className="footer-bottom text-center py-2">
-                <p>© 2024 Social Mediastics. All Rights Reserved.</p>
+                <p>© 2024 Creative Logo Design. All Rights Reserved.</p>
             </div>
         </footer>
     );

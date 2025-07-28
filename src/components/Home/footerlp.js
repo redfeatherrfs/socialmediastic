@@ -1,5 +1,5 @@
 import React from 'react';
-import footer from '../../images/footerlogo.png'; // Ensure the image path is correct
+import footer from '../../images/creativelogowhite.webp'; // Ensure the image path is correct
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import '../../footer.css';
 
@@ -21,7 +21,7 @@ const FooterLp = () => {
                             <Link to="/"> <img src={footer} alt="Animation Rush" style={{ maxWidth: '150px' }} /></Link>
                         </h5>
                         <p className="text-light">
-                        Social Mediastics is your trusted partner in digital marketing. We focus on boosting your brand’s presence across all major social media platforms. From content creation to audience engagement, we handle everything with a strategic approach. Our goal is to help your business grow online and connect with the right audience.
+                        Creative Logo Design is your trusted partner in digital marketing. We focus on boosting your brand’s presence across all major social media platforms. From content creation to audience engagement, we handle everything with a strategic approach. Our goal is to help your business grow online and connect with the right audience.
                         </p>
                     </div>
 
@@ -81,7 +81,7 @@ Wembley, England, HA0 4LY</a>
 
             {/* Footer Bottom Section with two columns */}
             <div className="footer-bottom text-center py-2">
-                <p>© 2025 Social Mediastics. All Rights Reserved.</p>
+                <p>© 2025 Creative Logo Design. All Rights Reserved.</p>
             </div>
         </footer>
     );

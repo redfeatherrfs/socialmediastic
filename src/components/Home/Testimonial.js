@@ -12,12 +12,12 @@ import { FaQuoteLeft } from 'react-icons/fa';
 const TestimonialSection = () => {
     const testimonials = [
         {
-            text: 'Social Mediastics has contributed a lot to enhancing the online presence of our brand. Their team was successful in high-quality content deliveries and perfectly engaging with our audience as well. All this resulted in increased traffic to our website as well as social media followers, thanks to their strategic approach.',
+            text: 'Creative Logo Design has contributed a lot to enhancing the online presence of our brand. Their team was successful in high-quality content deliveries and perfectly engaging with our audience as well. All this resulted in increased traffic to our website as well as social media followers, thanks to their strategic approach.',
             name: 'Rachael',
             location: 'UK'
         },
         {
-            text: 'We have been constantly amazed by how well Social Mediastics understands our corresponding target audience and tailors their strategies. Their creative content and timely responses have made it much easier to have a community built online. We love the results! ',
+            text: 'We have been constantly amazed by how well Creative Logo Design understands our corresponding target audience and tailors their strategies. Their creative content and timely responses have made it much easier to have a community built online. We love the results! ',
             name: 'Peter',
             location: 'Belgium'
         },
@@ -27,12 +27,12 @@ const TestimonialSection = () => {
             location: 'UK'
         },
         {
-            text: 'We first hesitated quite a bit about social media outsourcing, but as soon as we contacted Social Mediastics, all of that doubt disappeared. There is a great professional, fast response, and always go the extra mile taking from their team. So, no worries about handing over work to them. ',
+            text: 'We first hesitated quite a bit about social media outsourcing, but as soon as we contacted Creative Logo Design, all of that doubt disappeared. There is a great professional, fast response, and always go the extra mile taking from their team. So, no worries about handing over work to them. ',
             name: 'Thomas',
             location: 'USA'
         },
         {
-            text: 'Social Mediastics has totally changed the game for us as a company. Social media advertising expertise has had a positive impact on closing a good return for investment. We appreciate their partnership and look forward to continued benefits from this relationship."',
+            text: 'Creative Logo Design has totally changed the game for us as a company. Social media advertising expertise has had a positive impact on closing a good return for investment. We appreciate their partnership and look forward to continued benefits from this relationship."',
             name: 'Davide',
             location: 'Italy'
         }

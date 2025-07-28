@@ -62,28 +62,29 @@ const PopupForm = () => {
         return emailRegex.test(formData.email) && phoneRegex.test(formData.phone);
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        if (!validateEmailAndPhone()) return;
+    if (!validateEmailAndPhone()) return;
 
-        setLoading(true);
+    setLoading(true);
 
-        await fetch("http://creativelogodesign.co.uk/social-media/php_mailer/", {
-            method: 'POST',
-            body: JSON.stringify(formData),
-        })
-            .then((r) => r.json())
-            .then(({ success, message }) => {
-                document.querySelector('button[data-bs-dismiss]').click();
-                setLoading(false);
-                if (success) {
-                    navigate('/thanks.php');
-                } else {
-                    Swal.fire('Error', message, 'error');
-                }
-            });
-    };
+    await fetch("http://creativelogodesign.co.uk/social-media/php_mailer/", {
+        method: 'POST',
+        body: JSON.stringify(formData),
+    })
+        .then((r) => r.json())
+        .then(({ success, message }) => {
+            document.querySelector('button[data-bs-dismiss]').click();
+            setLoading(false);
+            if (success) {
+                window.location.href = "https://creativelogodesign.co.uk/thanks.php";
+            } else {
+                Swal.fire('Error', message, 'error');
+            }
+        });
+};
+
 
     return (
         <div className="modal fade" id="popupForm" tabIndex="-1">

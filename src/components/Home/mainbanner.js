@@ -26,7 +26,7 @@ const MainBanner = () => {
             <div className="subheading">Top Social Media Agency</div>
             <h1 className="banner-heading">Professional Social Media Services </h1>
             <p className="banner-text">
-            Ready to elevate your brand's online presence? Partner with Social Mediastics to achieve your marketing goals.
+            Ready to elevate your brand's online presence? Partner with Creative Logo Design to achieve your marketing goals.
             </p>
             
             <div className="button-group">

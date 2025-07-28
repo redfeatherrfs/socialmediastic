@@ -24,7 +24,7 @@ const TabHomeSection = () => {
               <div className="col-md-6 align-content-center">
                 <h2>Social Media Management</h2>
                 <p>
-                Social Mediastics are experts in the management of your brands. Our team will develop and execute an overarching plan to reach your target audience and build brand affinity. Engaging Content Implementing Online Community Management Running Targeted Ads, You'll get everything you want.
+                Creative Logo Design are experts in the management of your brands. Our team will develop and execute an overarching plan to reach your target audience and build brand affinity. Engaging Content Implementing Online Community Management Running Targeted Ads, You'll get everything you want.
                 </p>
               </div>
               <div className="col-md-6">
